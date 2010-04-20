@@ -17,8 +17,7 @@
 # limitations under the License.
 #
 
-
-if (node[:ec2])
+if (node[:ec2] && `mount|grep #{node[:mysql][:ec2_path]}`.chomp.empty?)
 
   service "mysql" do
     action :stop
@@ -39,7 +38,6 @@ if (node[:ec2])
   directory node[:mysql][:datadir] do
     owner "mysql"
     group "mysql"
-    action :create
   end
 
   mount node[:mysql][:datadir] do
@@ -53,4 +51,3 @@ if (node[:ec2])
     action :start
   end
 end
-
