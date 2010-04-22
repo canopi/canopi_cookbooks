@@ -17,30 +17,28 @@
 # limitations under the License.
 #
 
-unless `aptitude show redis-server` =~ /State: installed/
-  pkg = "redis-server_1.2.6-1_i386.deb"
+pkg = "redis-server_1.2.6-1_i386.deb"
 
-  remote_file "/tmp/#{pkg}" do
-    source "http://ftp.us.debian.org/debian/pool/main/r/redis/#{pkg}"
-  end
+remote_file "/tmp/#{pkg}" do
+  source "http://ftp.us.debian.org/debian/pool/main/r/redis/#{pkg}"
+end
 
-  package pkg do
-    provider Chef::Provider::Package::Dpkg
-    source "/tmp/#{pkg}"
-    only_if "test -e /tmp/#{pkg}"
-  end
+package pkg do
+  provider Chef::Provider::Package::Dpkg
+  source "/tmp/#{pkg}"
+  only_if "test -e /tmp/#{pkg}"
+end
 
-  service "redis" do
-    service_name "redis-server"
-    supports :restart => true, "force-reload" => true
-    action :enable
-  end
+service "redis" do
+  service_name "redis-server"
+  supports :restart => true, "force-reload" => true
+  action :enable
+end
 
-  template "/etc/redis/redis.conf" do
-    source "redis.conf.erb"
-    owner "root"
-    group "root"
-    mode "0644"
-    notifies :restart, resources(:service => "redis"), :immediately
-  end
+template "/etc/redis/redis.conf" do
+  source "redis.conf.erb"
+  owner "root"
+  group "root"
+  mode "0644"
+  notifies :restart, resources(:service => "redis"), :immediately
 end
