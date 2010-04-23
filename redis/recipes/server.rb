@@ -26,7 +26,7 @@ end
 package pkg do
   provider Chef::Provider::Package::Dpkg
   source "/tmp/#{pkg}"
-  only_if do File.exist?("/tmp/#{pkg}") && !`aptitude show redis-server` =~ /State: installed/ end
+  only_if do File.exist?("/tmp/#{pkg}") && !(`aptitude show redis-server` =~ /State: installed/) end
 end
 
 service "redis" do
