@@ -29,12 +29,19 @@ end
 include_recipe "ffmpeg::x264"
 
 unless `aptitude show ffmpeg` =~ /State: installed/
-  subversion "FFmpeg edge" do
-    repository "svn://svn.ffmpeg.org/ffmpeg/trunk" 
+  git "FFmpeg Edge" do
+    revision "3028fa75b761a0ebdcde5ab36d5468e7d049fae5"
+    repository "git://git.ffmpeg.org/ffmpeg" 
     destination "/tmp/ffmpeg"
     action :sync
   end
 
+  git "libswscale" do
+    repository "git://git.ffmpeg.org/libswscale" 
+    destination "/tmp/ffmpeg/libswscale"
+    action :sync
+  end
+  
   execute "configure ffmpeg" do
     command "./configure  --enable-gpl --enable-version3 --enable-nonfree --enable-postproc --enable-pthreads --enable-libfaac --enable-libfaad --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libx264 --enable-libxvid --enable-x11grab"
     cwd "/tmp/ffmpeg"
