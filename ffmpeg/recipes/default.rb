@@ -37,7 +37,8 @@ unless `aptitude show ffmpeg` =~ /State: installed/
   end
 
   git "libswscale" do
-    repository "git://git.ffmpeg.org/libswscale" 
+    revision "c7a9e932131263c04b7f7a13e888ffa8c64787de"
+    repository "git://git.ffmpeg.org/libswscale"
     destination "/tmp/ffmpeg/libswscale"
     action :sync
   end

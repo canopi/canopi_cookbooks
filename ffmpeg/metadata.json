@@ -1,0 +1,47 @@
+{
+  "recommendations": {
+
+  },
+  "license": "Apache 2.0",
+  "maintainer": "Example Com",
+  "suggestions": {
+
+  },
+  "maintainer_email": "ops@example.com",
+  "conflicting": {
+
+  },
+  "description": "Installs/Configures ffmpeg",
+  "platforms": {
+
+  },
+  "attributes": {
+
+  },
+  "providing": {
+
+  },
+  "recipes": {
+
+  },
+  "dependencies": {
+    "subversion": [
+
+    ],
+    "git": [
+
+    ],
+    "build-essential": [
+
+    ]
+  },
+  "version": "0.1.0",
+  "replacing": {
+
+  },
+  "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES: \n\n= USAGE:\n\n",
+  "name": "ffmpeg",
+  "groupings": {
+
+  }
+}
