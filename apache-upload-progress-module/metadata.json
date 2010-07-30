@@ -1,0 +1,41 @@
+{
+  "recommendations": {
+
+  },
+  "license": "Apache 2.0",
+  "maintainer": "Example Com",
+  "suggestions": {
+
+  },
+  "maintainer_email": "ops@example.com",
+  "conflicting": {
+
+  },
+  "description": "Installs/Configures apache-upload-progress-module",
+  "platforms": {
+
+  },
+  "attributes": {
+
+  },
+  "providing": {
+
+  },
+  "recipes": {
+
+  },
+  "dependencies": {
+    "apache2": [
+
+    ]
+  },
+  "version": "0.1.0",
+  "replacing": {
+
+  },
+  "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES: \n\n= USAGE:\n\n",
+  "name": "apache-upload-progress-module",
+  "groupings": {
+
+  }
+}

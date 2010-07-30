@@ -2,16 +2,16 @@
   "recommendations": {
 
   },
-  "license": "Apache v2.0",
-  "maintainer": "37signals",
+  "license": "Apache 2.0",
+  "maintainer": "Opscode, Inc.",
   "suggestions": {
 
   },
-  "maintainer_email": "sysadmins@37signals.com",
+  "maintainer_email": "cookbooks@opscode.com",
   "conflicting": {
 
   },
-  "description": "Configures Sphinx, a high performance search engine",
+  "description": "LWRPs for managing AWS resources",
   "platforms": {
 
   },
@@ -25,19 +25,14 @@
 
   },
   "dependencies": {
-    "logrotate": [
 
-    ],
-    "god": [
-
-    ]
   },
-  "version": "0.1.0",
+  "version": "0.8.0",
   "replacing": {
 
   },
   "long_description": "",
-  "name": "sphinx",
+  "name": "aws",
   "groupings": {
 
   }
